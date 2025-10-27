@@ -1,0 +1,57 @@
+@Youtube.Api_HostAddress = http://localhost:5208
+###
+# GET (Listar todos os canais)
+#
+GET {{Youtube.Api_HostAddress}}/api/channels
+Accept: application/json
+
+###
+# POST (Criar um novo canal)
+#
+POST {{Youtube.Api_HostAddress}}/api/channels
+Content-Type: application/json
+
+{
+  "name": "Meu Canal de Teste",
+  "email": "teste@email.com",
+  "password": "minhasenha123",
+  "image": "url_da_imagem.png"
+}
+
+###
+# GET (Listar todos os vídeos)
+#
+GET {{Youtube.Api_HostAddress}}/api/videos
+Accept: application/json
+
+###
+# POST (Criar um novo vídeo)
+#
+POST {{Youtube.Api_HostAddress}}/api/videos
+Content-Type: application/json
+
+{
+  "title": "Meu Primeiro Vídeo",
+  "description": "Testando a API",
+  "thumbnail": "thumb.jpg",
+  "channelId": "ID_DE_UM_CANAL_EXISTENTE"
+}
+
+###
+# GET (Listar todos os comentários)
+#
+GET {{Youtube.Api_HostAddress}}/api/comments
+Accept: application/json
+
+###
+# POST (Criar um novo comentário)
+POST {{Youtube.Api_HostAddress}}/api/comments
+Content-Type: application/json
+
+{
+  "content": "Que vídeo legal!",
+  "videoId": "",
+  "channelId": ""
+}
+
+###
